@@ -1,111 +1,52 @@
 # Ejercicios TypeScript
 
-# Ejercicios TypeScript
+# Ejercicio 7
 
-## Ejercicio 1
+- Crea una clase para modelar un animal. Recuerda crear primero la interfaz necesaria.
 
-Crea una variable donde vas a guardar el grado de dificultad de un juego. Los grados de dificultad pueden ser: "Easy", "Medium" o "Hard". Crea un alias para ello.
+Un animal tiene las siguientes propiedades:
 
-## Ejercicio 2
+- Nombre
+- Edad
+- Peso
+- Grado de miedo (números enteros entre 1 y 5) (el objeto instanciado no debería tener esta propiedad)
 
-Crea un _enum_ para los cuatro estados que puede tener un pedido en un ecommerce. Un pedido puede estar pendiente, en proceso, entregado o devuelto.
+El constructor debe pedir los cuatro valores y asignarlos a las propiedades.
 
-Crea una variable donde vas a guardar el estado de un pedido. Utiliza el enum para ello.
+Un animal tiene los siguientes métodos:
 
-## Ejercicio 3
+- `eat(food)`: devuelve un string con la comida que come el animal. P.e.: "Come carne"
 
-Estás desarrollando una tienda online de videojuegos. Borra las dos variables que has creado en los puntos anteriores, pero deja los tipados.
+- Crea una clase para modelar un animal que se desplaza. Recuerda crear primero la interfaz necesaria.
 
-Modela todas las _id_ de este ejercicio como `string`.
+Un animal que se desplaza tiene las siguientes propiedades (además de las que ya tiene por ser animal):
 
-1. Crea un tipado para modelar un juego. Un juego debe contener la siguiente información:
+- Modo de desplazamiento
+- Velocidad (un número entero del 1 al 10) (el objeto instanciado no debería tener esta propiedad)
 
-- Un id de juego
-- Un nombre
-- Una descripción
-- Una dificultad
-- Un precio
-- Un listado de plataformas disponibles
+Un animal que se desplaza tiene los siguientes métodos (además de los que ya tiene por ser animal):
 
-2. Crea un tipado para modelar un comprador. Un comprador debe contener la siguiente información:
+- `move(distanceInMeters)`: devuelve un string con el movimiento que hace el animal. P.e.: "Se mueve 5 metros"
+- `setSpeed(speed)`: establece la velocidad del animal
 
-- Un id de comprador
-- Un nombre
-- Un email
-- Una edad
-- Un username
-- Una contraseña
+- Crea un animal para modelar un animal que no se desplaza. Recuerda crear primero la interfaz necesaria.
 
-3. Crea un tipado para modelar un pedido. Un pedido debe contener la siguiente información:
+Un animal que no se desplaza tiene las siguientes propiedades (además de las que ya tiene por ser animal):
 
-- Un id de pedido
-- Un comprador (con todos sus datos)
-- Un listado de juegos comprados
-- Un estado de pedido
-- Un importe total de pedido
+- Método de fijación
 
-4. Crea una variable que almacene tres juegos. Ayúdate de Intellisense para añadir correctamente los datos.
+Un animal que no se desplaza tiene los siguientes métodos (además de los que ya tiene por ser animal):
 
-5. Crea una variable que almacene un comprador.
+- `fix(fixation)`: devuelve un string con la fijación del animal. P.e.: "Se fija en el suelo"
 
-6. Crea una función `createOrder` que reciba un listado de juegos y un comprador y devuelva un pedido con todos los datos. Debe comprobar que el comprador tiene 18 años o más. Si no es así, debe lanzar un error.
+- Crea una clase para modelar una tortuga. Recuerda crear primero la interfaz necesaria.
 
-7. Crea una variable que almacene un pedido. Utiliza la función `createOrder` para crear el pedido.
+Una tortuga tiene las siguientes propiedades (además de las que ya tiene por ser animal que se desplaza):
 
-8. Crea una función `getOrderStatus` que reciba un pedido y devuelva el estado del pedido.
+- Si está escondida en el caparazón
 
-9. Crea una función `getOrderTotal` que reciba un pedido y devuelva el importe total del pedido.
+Una tortuga tiene los siguientes métodos (además de los que ya tiene por ser animal que se desplaza):
 
-10. Crea una función `getOrderGames` que reciba un pedido y devuelva el listado de juegos del pedido.
+- `hideInShell()`: devuelve un string con la acción de esconderse en el caparazón. P.e.: "Se esconde en el caparazón".
 
-## Ejercicio 4
-
-Crea una función llamada `getWrappedValue` que reciba un valor de cualquier tipo y devuelva un objeto con una propiedad `value` que apunte al valor recibido.
-
-P.e.:
-
-```
-getWrappedValue(5) // { value: 5 }
-getWrappedValue("hola") // { value: "hola" }
-```
-
-## Ejercicio 5
-
-Crea una interfaz para modelar un libro. Un libro tendrá título, autor, género y año de publicación.
-
-Crea una interfaz para modelar la información ampliada de un libro, que tendrá, además de las propiedades del libro, un formato papel o digital.
-
-Crea una función llamada `getBookInfo` que reciba un objeto de tipo libro y devuelva un string con el siguiente formato:
-
-```
-"El libro <título> escrito por <autor> se publicó en el año <año>"
-```
-
-Crea una función llamada `getBookExtendedInfo` que reciba un objeto de tipo libro y devuelva un string con el siguiente formato:
-
-```
-"El libro <título> escrito por <autor> se publicó en el año <año> en formato <formato>"
-```
-
-Crea una función llamada `getPaperBooks` que reciba un array de libros y devuelva un array con los libros que sean en formato papel.
-
-Crea una variable para almacenar las estadísticas de la tienda de libros. Los datos que tiene que llevar son:
-
-- Número total de libros
-- Número total de libros en formato papel
-- Número total de libros en formato digital
-- Número total de libros de Edgar Allan Poe
-- Número total de libros de Mary Shelley
-- Si el libro "Frankenstein" está disponible en formato papel
-
-Si para resolver este ejercicio necesitas crear funciones auxiliares, hazlo.
-
-# Ejercicio 6
-
-Crea una función que haga exactamente lo mismo que `map()` pero sin usar `map()`. La única diferencia (aparte del nombre) será que la función que crees tiene que recibir el array como parámetro.
-
-Ejemplo de uso:
-
-```
-myMap([1, 2, 3], (number) => number * 2) // [2, 4, 6]
-```
+El constructor de la tortuga debe comprobar si el grado de miedo es mayor de 3. Si es así, debe esconderse en el caparazón. También debe comprobar si la velocidad recibida es mayor de 5. Si es así, debe establecer la velocidad a 5.
