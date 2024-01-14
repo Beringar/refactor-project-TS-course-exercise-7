@@ -9,6 +9,7 @@ export class MovingAnimal extends Animal implements MovingAnimalStructure {
     return `Moved ${distanceInMeters} meters`;
   }
 
+  // TODO: do not create an implementation here. Make MovingAnimal class abstract.
   setSpeed(speed: Speed): void {
     this.speed = speed;
   }
